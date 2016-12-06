@@ -26,5 +26,16 @@ MapWrapper.prototype = {
 
   setCenter: function( latLng ) {
     this.map.setCenter( latLng );
+  },
+
+  addListener: function( listener, callback ) {
+    this.map.addListener( listener, callback );
+  },
+
+  getCenter: function() {
+    var center = this.map.getCenter();
+    var lat = center.lat().toFixed( 3 );
+    var lng = center.lng().toFixed( 3 );
+    return "lat: " + lat + " lng: " + lng;
   }
 };

@@ -9,6 +9,10 @@
     mainMap = new MapWrapper( mapContainer, center, zoom );
     mainMap.addMarker({ lat: 51.5, lng: -0.12 });
 
+    mainMap.addListener( 'center_changed', handleCentreChanged );
+
+    handleCentreChanged();
+
     var latLngButton = document.getElementById( 'lat-lng-button' );
     latLngButton.onclick = handleLatLngButtonClick;
 
@@ -27,6 +31,12 @@
     else {
       whereAmIButton.disabled = true;
     }
+  };
+
+  var handleCentreChanged = function() {
+
+    var locationDisplay = document.getElementById( 'location-display' );
+    locationDisplay.innerText = mainMap.getCenter();
   };
 
   var handleLatLngButtonClick = function() {
