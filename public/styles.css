@@ -6,4 +6,26 @@ body {
   width: 500px;
   height: 500px;
   background-color: white;
+  display: inline-block;
+}
+
+#favourites-container {
+  width: 300px;
+  height: 500px;
+  background-color: lightblue;
+  display: inline-block;
+}
+
+#location-display {
+  display: inline-block;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.flex-item {
+  margin: auto;
 }

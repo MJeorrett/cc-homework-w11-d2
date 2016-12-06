@@ -9,9 +9,17 @@
     <script src="mapWrapper.js"></script>
   </head>
   <body>
-    <div id="map-container"></div>
+    <div id="flex-container">
+      <div id="map-container" class="flex-item"></div>
+      <div id="favourites-container" class="flex-item">
+        <h2>Favourites</h2>
+        <ul id="favourites-list"></ul>
+      </div>
+    <div>
     <hr/>
     <p id="location-display"></p>
+    <input id="location-name-input" type="text" placeholder="Enter name for favourite"/>
+    <button id="add-favourite-button" >Add Favourite</button>
     <hr/>
     <form action="">
       <label for="lat-input">Lat: </label>
