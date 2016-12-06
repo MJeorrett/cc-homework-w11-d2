@@ -13,6 +13,9 @@
 
     handleCentreChanged();
 
+    var addFavouriteButton = document.getElementById( 'add-favourite-button' );
+    addFavouriteButton.onclick = handleAddFavourite;
+
     var latLngButton = document.getElementById( 'lat-lng-button' );
     latLngButton.onclick = handleLatLngButtonClick;
 
@@ -32,6 +35,35 @@
       whereAmIButton.disabled = true;
     }
   };
+
+  var handleAddFavourite = function() {
+    var location = mainMap.map.getCenter();
+    var favouriteNameInput = document.getElementById( 'favourite-name-input' );
+    var favouriteName = favouriteNameInput.value;
+
+    if ( favouriteName !== "" ) {
+      addFavourite( favouriteName, location );
+    }
+  };
+
+  var addFavourite = function( name, location ) {
+
+    console.log("location:", location);
+    var nameTd = document.createElement( 'td' );
+    nameTd.innerText = name;
+    var latTd = document.createElement( 'td' );
+    latTd.innerText = location.lat().toFixed( 3 );
+    var lngTd = document.createElement( 'td' );
+    lngTd.innerText = location.lng().toFixed( 3 );
+
+    var tr = document.createElement( 'tr' );
+    tr.appendChild( nameTd );
+    tr.appendChild( latTd );
+    tr.appendChild( lngTd );
+
+    var favouritesTable = document.getElementById( 'favourites-table' );
+    favouritesTable.appendChild( tr );
+  }
 
   var handleCentreChanged = function() {
 
