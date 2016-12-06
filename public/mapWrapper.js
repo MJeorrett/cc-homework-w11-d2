@@ -22,5 +22,9 @@ MapWrapper.prototype = {
     marker.addListener( 'click', function() {
       infoWindow.open( this.map, marker )
     }.bind( this ) );
+  },
+
+  setCenter: function( latLng ) {
+    this.map.setCenter( latLng );
   }
 };
