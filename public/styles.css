@@ -2,6 +2,11 @@ body {
   background-color: dodgerblue;
 }
 
+h2 {
+  color: dodgerblue;
+  padding: 5px;
+}
+
 #map-container {
   width: 500px;
   height: 500px;
@@ -28,4 +33,20 @@ body {
 
 .flex-item {
   margin: auto;
+}
+
+table, tr, td {
+  border: 1px solid dodgerblue;
+  color: dodgerblue;
+  font-weight: bold;
+}
+
+td {
+  padding: 5px;
+}
+
+table {
+  border-collapse: collapse;
+  border-width: 3px;
+  margin: 5px;
 }
