@@ -38,6 +38,9 @@ h2 {
 table, tr, td {
   border: 1px solid dodgerblue;
   color: dodgerblue;
+}
+
+thead {
   font-weight: bold;
 }
 
