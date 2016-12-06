@@ -5,6 +5,7 @@ body {
 h2 {
   color: dodgerblue;
   padding: 5px;
+  float: left;
 }
 
 #map-container {
