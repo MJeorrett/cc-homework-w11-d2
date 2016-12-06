@@ -13,12 +13,20 @@
       <div id="map-container" class="flex-item"></div>
       <div id="favourites-container" class="flex-item">
         <h2>Favourites</h2>
-        <ul id="favourites-list"></ul>
+        <table id="favourites-list">
+          <thead>
+            <tr>
+              <td>Favourite Name</td>
+              <td>Latitude</td>
+              <td>Longitude</td>
+            </tr>
+          </thead>
+        </table>
       </div>
     <div>
     <hr/>
     <p id="location-display"></p>
-    <input id="location-name-input" type="text" placeholder="Enter name for favourite"/>
+    <input id="favourite-name-input" type="text" placeholder="Enter name for favourite"/>
     <button id="add-favourite-button" >Add Favourite</button>
     <hr/>
     <form action="">
