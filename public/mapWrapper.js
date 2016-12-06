@@ -7,3 +7,12 @@ var MapWrapper = function( container, center, zoom ) {
     }
   );
 };
+
+MapWrapper.prototype = {
+  addMarker: function( latLng ) {
+    new google.maps.Marker({
+      position: latLng,
+      map: this.map
+    });
+  }
+};
