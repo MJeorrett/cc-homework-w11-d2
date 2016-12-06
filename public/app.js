@@ -11,6 +11,12 @@
 
     var latLngButton = document.getElementById( 'lat-lng-button' );
     latLngButton.onclick = handleLatLngButtonClick;
+
+    var form = document.querySelector( 'form' );
+    form.onsubmit = function( ev ) {
+      ev.preventDefault();
+      return false;
+    };
   };
 
   var handleLatLngButtonClick = function() {
@@ -19,7 +25,13 @@
     var lat = parseFloat( latString );
     var lng = parseFloat( lngString );
 
-    if ( lat !== NaN && lng !== NaN ) {
+    if (
+      lat !== NaN &&
+      lng !== NaN &&
+      lat >= -90 &&
+      lat <= 90 &&
+      lng >= -180 &&
+      lng <= 180 ) {
       mainMap.setCenter({ lat: lat, lng: lng });
     }
   }
