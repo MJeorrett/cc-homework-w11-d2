@@ -17,6 +17,16 @@
       ev.preventDefault();
       return false;
     };
+
+    var whereAmIButton = document.getElementById( "where-am-i-button" );
+
+    if ( "geolocation" in navigator ) {
+      whereAmIButton.disabled = false;
+      whereAmIButton.onclick = handleWhereAmIClick;
+    }
+    else {
+      whereAmIButton.disabled = true;
+    }
   };
 
   var handleLatLngButtonClick = function() {
@@ -34,7 +44,14 @@
       lng <= 180 ) {
       mainMap.setCenter({ lat: lat, lng: lng });
     }
-  }
+  };
+
+  var handleWhereAmIClick = function() {
+    navigator.geolocation.getCurrentPosition( function( position ) {
+      mainMap.setCenter({ lat: position.coords.latitude, lng: position.coords.longitude });
+      console.log( "found user location" );
+    });
+  };
 
   window.onload = init;
 })();
