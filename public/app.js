@@ -1,5 +1,8 @@
 var init = function() {
-  console.log( "Hello World" );
+  var mapContainer = document.getElementById( 'map-container' );
+  var center = { lat: 51.5, lng: -0.1227758 };
+  var zoom = 10;
+  var mainMap = new MapWrapper( mapContainer, center, zoom );
 };
 
 window.onload = init;
